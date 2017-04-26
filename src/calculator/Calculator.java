@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class calc extends JFrame implements ActionListener, KeyListener {
+public class Calculator extends JFrame implements ActionListener, KeyListener {
 	
 	private static final long serialVersionUID = 1;
 
@@ -25,12 +25,12 @@ public class calc extends JFrame implements ActionListener, KeyListener {
 	ArrayList<String> numbers = new ArrayList<String>();
 
 	public static void main(String[] args) {
-		new calc();
+		new Calculator();
 	}
 
-	public calc() {
 		Font font = new Font("Leelawadee UI Semilight", Font.PLAIN, 40);
 		Color color = new Color(48, 48, 48);
+	public Calculator() {
 
 		this.setTitle(" C A L C U L A T O R");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
