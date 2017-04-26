@@ -22,15 +22,18 @@ public class Calculator extends JFrame implements ActionListener, KeyListener {
 	String lastOperator;
 	String answer;
 
+	Font buttonFont;
+	Color buttonColor;
+
 	ArrayList<String> numbers = new ArrayList<String>();
 
 	public static void main(String[] args) {
 		new Calculator();
 	}
 
-		Font font = new Font("Leelawadee UI Semilight", Font.PLAIN, 40);
-		Color color = new Color(48, 48, 48);
 	public Calculator() {
+		this.buttonFont = new Font("Leelawadee UI Semilight", Font.PLAIN, 40);
+		this.buttonColor = new Color(48, 48, 48);
 
 		this.setTitle(" C A L C U L A T O R");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -70,14 +73,7 @@ public class Calculator extends JFrame implements ActionListener, KeyListener {
 		for (int i = 0; i < buttons.length; i++) {
 			for (int j = 0; j < buttons[i].length; j++) {
 
-				buttons[i][j] = new JButton(buttonNames[i][j]);
-				buttons[i][j].setFocusable(false);
-				buttons[i][j].setFont(font);
-				buttons[i][j].setBackground(color);
-				buttons[i][j].setBorder(null);
-				buttons[i][j].setForeground(Color.WHITE);
-				buttons[i][j].addActionListener(this);
-				buttons[i][j].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+				buttons[i][j] = this.createButton(buttonNames[i][j]);
 				if (j == 3) {
 					buttons[i][j].setBackground(new Color(111, 226, 205));
 				}
@@ -91,6 +87,18 @@ public class Calculator extends JFrame implements ActionListener, KeyListener {
 		this.add(main);
 		this.setVisible(true);
 		this.setSize(620, 900);
+	}
+
+	private JButton createButton(String name) {
+		JButton button = new JButton(name);
+		button.setFocusable(false);
+		button.setFont(this.buttonFont);
+		button.setBackground(this.buttonColor);
+		button.setBorder(null);
+		button.setForeground(Color.BLACK);
+		button.addActionListener(this);
+		button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		return button;
 	}
 
 	public void actionPerformed(ActionEvent e) {
