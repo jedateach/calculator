@@ -63,11 +63,11 @@ public class Calculator extends JFrame implements ActionListener, KeyListener {
 		textField.setFont(new Font("Leelawadee UI Semilight", Font.PLAIN, 93));
 		main.add(textField, constraints);
 		String[][] buttonNames = new String[][] { 
-			{ "AC", "DEL", "%", "÷" }, 
+			{ "AC", "DEL", "%", "Ëœ" }, 
 			{ "7", "8", "9", "x" },
 			{ "4", "5", "6", "-" }, 
 			{ "1", "2", "3", "+" }, 
-			{ "0", ".", "±", "=" } };
+			{ "0", ".", "Â±", "=" } };
 		constraints.gridwidth = 1;
 
 		for (int i = 0; i < buttons.length; i++) {
@@ -162,7 +162,7 @@ public class Calculator extends JFrame implements ActionListener, KeyListener {
 					float ans = ((float) (number1 * number2));
 					answer = String.valueOf(ans);
 					displayAnswer = true;
-				} else if (lastOperator.equals("÷") || lastOperator.equals("/") && operator.equals("=")
+				} else if (lastOperator.equals("Ëœ") || lastOperator.equals("/") && operator.equals("=")
 						|| (lastOperator.equals("/") && operator.equals("="))) {
 					float ans = ((float) (number1 / number2));
 					answer = String.valueOf(ans);
@@ -230,7 +230,7 @@ public class Calculator extends JFrame implements ActionListener, KeyListener {
 		case "+":
 		case "-":
 		case "/":
-		case "÷":
+		case "Ëœ":
 		case "%":
 		case "=":
 			operations(numOp);
@@ -241,7 +241,7 @@ public class Calculator extends JFrame implements ActionListener, KeyListener {
 		case "AC":
 			allClear();
 			break;
-		case "±":
+		case "Â±":
 			plusM();
 			break;
 		}
